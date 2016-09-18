@@ -8,7 +8,7 @@ var fs = require('fs');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var json = JSON.parse(fs.readFileSync('..\\brock.json', 'utf8'));
-    res.render('MyFinaces', { data: json, title: 'My Finaces'});
+    res.render('MyFinances', { data: json, title: 'My Finances'});
 });
 
 module.exports = router;
