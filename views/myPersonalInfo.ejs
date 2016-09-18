@@ -1,43 +1,48 @@
 
 <div class="columndiv" id="myPersonalInfo">
     <span>
-        <div class="testdiv" style="line-height:5em;">
+        <div class="testdiv" >
             <div class="row"  data-toggle="collapse" data-target="#pInfo">
 
                 <div class="col-lg-6">
                     <div style="margin:20px;">
                         <div  style="background-image:url('images/dl.png');border-radius: 15px;width:444px;height: 282px;">
-                            <div style="font-size:16px;float:left;width:225px;margin-top:45px;margin-bottom:20px;line-height: 24px">
-                                <ul style="list-style: none;">
-                                    <li><strong>Name: </strong><%= data['USER']['name'] %></li>
-                                    <li><strong>DOB: </strong><%= data['USER']['dob'] %></li>
-                                    <li><strong>Address: </strong><%= data['USER']['address'] %></li>
-                                    <li><strong>Sex: </strong><%= data['USER']['sex'] %></li>
-                                    <li><strong>License Number: </strong><%= data['USER']['dl_num'] %></li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="line-height:4em;">
                     <ul style="list-style:none;">
+                        <li><strong>Data Release Number (DRN): </strong><%= data['SAR']['date'] %></li>
+                        <li><strong>Expected Family Contribution (EFC): </strong><%= data['SAR']['drn'] %></li>
+                        <li><strong>OMB No: </strong><%= data['SAR']['omb'] %></li>
                         <li><strong>Phone Number: </strong><%= data['USER']['phone'] %></li>
                         <li><strong>Email Address: </strong><%= data['USER']['email'] %></li>
                     </ul>
                 </div>
-                <div id="pInfo" class="panel-collapse collapse">
-                    <ul class="list-group" style="list-style:none;">
-                        <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
-                        <li><strong>Date of Marital Status Change: </strong>n/a</li>
-                        <li><strong>Registered for service ?: </strong>Yes</li>
-                        <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
-                        <li><strong>Citizen ?: </strong>Yes</li>
-                        <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
-                        <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
-                    </ul>
+                <div class="row collapse" id="pInfo" data-toggle="collapse" data-target="#pInfo" style="line-height:5em;">
+                    <div class="col-lg-1"><p></p></div>
+                    <div class="col-lg-5">
+                        <ul style="list-style:none;">
+                            <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
+                            <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
+                            <li><strong>Registered for service ?: </strong>Yes</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <ul style="list-style:none;">
+                            <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
+                            <li><strong>Citizen ?: </strong>Yes</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <ul style="list-style:none;">
+                            <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
+                            <li><strong>Date of Marital Status Change: </strong>n/a</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
         </div>
     </span>
 </div>
