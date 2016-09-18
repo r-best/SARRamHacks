@@ -1,62 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-</head>
-<body>
 <div class="container">
     <div class="jumbotron" style="background-color:gainsboro;font-size:20px;border-radius: 25px;">
-<div style="padding:10px 50px 50px 50px;horiz-align: center">
-    <div class="row" style="text-align: center">
-        <h1 style="margin-bottom:40px;">Personal Information</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <div style="margin:20px;">
-                <div style="border-radius: 15px;background-color: darkgrey;width:360px;height: 230px;">
-                    <div style="border-radius: 20px;float:left;margin: 35px 0px 35px 30px; background-color:blueviolet; width:90px; height:130px;">
+        <div style="padding:10px 50px 50px 50px;horiz-align: center">
+            <div class="row" style="text-align: center">
+                <h1 style="margin-bottom:40px;">Personal Information</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div style="margin:20px;">
+                        <div style="border-radius: 15px;background-color: darkgrey;width:360px;height: 230px;" data-toggle="collapse" data-target="#pInfo">
+                            <div style="border-radius: 20px;float:left;margin: 35px 0px 35px 30px; background-color:blueviolet; width:90px; height:130px;">
+
+                            </div>
+                            <div style="font-size:16px;float:left;width:225px;margin-top:45px;margin-bottom:20px;line-height: 24px">
+                                <ul style="list-style: none;">
+                                    <li><strong>Name: </strong><%= data['USER']['name'] %></li>
+                                    <li><strong>DOB: </strong><%= data['USER']['dob'] %></li>
+                                    <li><strong>Address: </strong><%= data['USER']['address'] %></li>
+                                    <li><strong>Sex: </strong><%= data['USER']['sex'] %></li>
+                                    <li><strong>License Number: </strong><%= data['USER']['dl_num'] %></li>
+                                </ul>
+                            </div>
+                        </div>
 
                     </div>
-                    <div style="font-size:16px;float:left;width:225px;margin-top:45px;margin-bottom:20px;line-height: 24px">
+                    <div style="line-height: 60px" id="pInfo" class="collapse">
                         <ul style="list-style: none;">
-                            <li><strong>Name: </strong><%= data['USER']['name'] %></li>
-                            <li><strong>DOB: </strong><%= data['USER']['dob'] %></li>
-                            <li><strong>Address: </strong><%= data['USER']['address'] %></li>
-                            <li><strong>Sex: </strong><%= data['USER']['sex'] %></li>
-                            <li><strong>License Number: </strong><%= data['USER']['dl_num'] %></li>
+                            <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
+                            <li><strong>Date of Marital Status Change: </strong>n/a</li>
+                            <li><strong>Registered for service ?: </strong>Yes</li>
                         </ul>
                     </div>
                 </div>
+                <div class="col-lg-6"  style="line-height: 60px">
 
+                    <ul style="list-style: none;">
+                        <li>&nbsp</li>
+                        <li><strong>Phone Number: </strong><%= data['USER']['phone'] %></li>
+                        <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
+                        <li><strong>Email Address: </strong><%= data['USER']['email'] %></li>
+                        <li><strong>Citizen ?: </strong>Yes</li>
+                        <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
+
+                        <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
+                    </ul>
+                </div>
             </div>
-            <div style="line-height: 60px">
-                <ul style="list-style: none;">
-                    <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
-                    <li><strong>Date of Marital Status Change: </strong>n/a</li>
-                    <li><strong>Registered for service ?: </strong>Yes</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-lg-6"  style="line-height: 60px">
-
-            <ul style="list-style: none;">
-                <li>&nbsp</li>
-                <li><strong>Phone Number: </strong><%= data['USER']['phone'] %></li>
-                <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
-                <li><strong>Email Address: </strong><%= data['USER']['email'] %></li>
-                <li><strong>Citizen ?: </strong>Yes</li>
-                <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
-
-                <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
-            </ul>
         </div>
     </div>
 </div>
-        </div>
-    </div>
-</body>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-</html>
