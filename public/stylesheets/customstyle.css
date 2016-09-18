@@ -26,6 +26,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
    display: none;
 }
 
+.fa{
+    color:#C24642;
+}
 
 p {
     line-height: 120%;

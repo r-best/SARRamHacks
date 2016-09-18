@@ -79,12 +79,13 @@ window.onload = function () {
         backgroundColor: null,
         width:275,
         title:{
-            text: "Type of Student Loan"
+            text: "Subsidization"
         },
                 animationEnabled: true,
         legend:{
             fontSize:15,
             verticalAlign: "bottom",
+            maxWidth:250,
             horizontalAlign: "center"
         },
         data: [
@@ -96,10 +97,10 @@ window.onload = function () {
             indexLabelPlacement: "outside",
             type: "pie",       
             showInLegend: true,
-            toolTipContent: "{y} - <strogn>#percent%</strong>",
+            toolTipContent: "{y} - <strong>#percent%</strong>",
             dataPoints: [
-                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
-                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
+                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"Subsidized (No Intrest now)"},
+                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Unsubsidized (Intrest now)"},
             ]
         }
         ]
