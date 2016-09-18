@@ -2,25 +2,131 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js'></script>
+
+<script type="text/javascript">
+window.onload = function () {
+    $.get('/myLoans/json').done(function(data){ 
+        console.log(data)
+        var total = parseInt(data['LOAN']['ffel_sub_n']) + parseInt(data['LOAN']['ffel_unsub_n'])
+        var chart1 = new CanvasJS.Chart("chartContainer",
+    {
+        backgroundColor: null,
+        width:275,
+        title:{
+            text: "Balance distribution"
+        },
+                animationEnabled: true,
+        legend:{
+            fontSize:15,
+            verticalAlign: "bottom",
+            horizontalAlign: "center"
+        },
+        data: [
+        {        
+            indexLabelFontSize: 20,
+            indexLabelFontFamily: "Monospace",       
+            indexLabelFontColor: "darkgrey", 
+            indexLabelLineColor: "darkgrey",        
+            indexLabelPlacement: "outside",
+            type: "pie",       
+            showInLegend: true,
+            toolTipContent: "${y} - <strong>#percent%</st rong>",
+            dataPoints: [
+                {  y: total/4, legendText:"Substidized"},
+                {  y: (3*total)/4, legendText:"unSubstidized"},
+            ]
+        }
+        ]
+    });
+    chart1.render();
+    var chart2 = new CanvasJS.Chart("chartContainer2",
+    {
+        backgroundColor: null,
+        width:275,
+        title:{
+            text: "Type of Student Loan"
+        },
+                animationEnabled: true,
+        legend:{
+            fontSize:15,
+            verticalAlign: "bottom",
+            horizontalAlign: "center"
+        },
+        data: [
+        {        
+            indexLabelFontSize: 20,
+            indexLabelFontFamily: "Monospace",       
+            indexLabelFontColor: "darkgrey", 
+            indexLabelLineColor: "darkgrey",        
+            indexLabelPlacement: "outside",
+            type: "pie",       
+            showInLegend: true,
+            toolTipContent: "{y} - <strong>#percent%</strong>",
+            dataPoints: [
+                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
+                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
+            ]
+        }
+        ]
+    });
+    chart2.render();
+    var chart3 = new CanvasJS.Chart("chartContainer3",
+    {
+        backgroundColor: null,
+        width:275,
+        title:{
+            text: "Type of Student Loan"
+        },
+                animationEnabled: true,
+        legend:{
+            fontSize:15,
+            verticalAlign: "bottom",
+            horizontalAlign: "center"
+        },
+        data: [
+        {        
+            indexLabelFontSize: 20,
+            indexLabelFontFamily: "Monospace",       
+            indexLabelFontColor: "darkgrey", 
+            indexLabelLineColor: "darkgrey",        
+            indexLabelPlacement: "outside",
+            type: "pie",       
+            showInLegend: true,
+            toolTipContent: "{y} - <strong>#percent%</strong>",
+            dataPoints: [
+                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
+                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
+            ]
+        }
+        ]
+    });
+    chart3.render();
+
+
+
+     });
+}
+</script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <br>
+    <% include header.ejs %>
     <hr>
-    <ul>
-      <li><a href="/">myHome</a></li>
-      <li><a href="/myFinances">myFinances</a></li>
-      <li><a href="/myPersonalInfo">myPersonalInfo</a></li>
-      <li><a href="/myEducation">myEducation</a></li>
-      <li><a href="/myLoans">myLoans</a></li>
-      <li><a href="/myFamily">myFamily</a></li>
-      <li><a href="/myBudget">myBudget</a></li>
-      <li><a href="/myTaxes">myTaxes</a></li>
-      <li><a href="/myActionables">myActionables</a></li>
-    </ul>
+    <% include myLoans.ejs %>
+    <hr>
+    <% include myPersonalInfo.ejs%>
+    <hr>
+    <% include myFamily.ejs%>
+    <hr>
+    <% include myTaxes.ejs%>
+    <hr>
+    <% include myEducation.ejs%>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

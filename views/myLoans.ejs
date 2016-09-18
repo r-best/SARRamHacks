@@ -3,12 +3,14 @@
 <head>
     <title><%= data['LOAN']['ffel_sub'] %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <link rel='stylesheet' href='/stylesheets/customstyle.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css' />
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js'></script>
 <script type="text/javascript">
 window.onload = function () {
-    $.get('/myLoans/json').done(function(data){ 
+    $.get('/json').done(function(data){ 
         console.log(data)
         var total = parseInt(data['LOAN']['ffel_sub_n']) + parseInt(data['LOAN']['ffel_unsub_n'])
         var chart1 = new CanvasJS.Chart("chartContainer",
@@ -95,7 +97,7 @@ window.onload = function () {
             indexLabelPlacement: "outside",
             type: "pie",       
             showInLegend: true,
-            toolTipContent: "{y} - <strong>#percent%</strong>",
+            toolTipContent: "{y} - <strogn>#percent%</strong>",
             dataPoints: [
                 {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
                 {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
@@ -113,28 +115,16 @@ window.onload = function () {
 </head>
 <body>
 <div class="testdiv">
-<div id="chartContainer" style="height: 200px; width: auto; display:inline-block;margin:0 5em">
+<div class="space" id="chartContainer" style="height: 200px; width: 10em; display:inline-block;margin:0 5em">
 </div>
 
-<div id="chartContainer2" style="height: 200px; width: auto; display:inline-block;margin:0 5em">
+<div class="space" id="chartContainer2" style="height: 200px; width: 10em; display:inline-block;margin:0 5em">
 </div>
 
-<div id="chartContainer3" style="height: 200px; width: auto;display:inline-block; margin:0 5em"></div>
+<div class="space" id="chartContainer3" style="height: 200px; width: 10em;display:inline-block; margin:0 5em"></div>
 </div>
-<h1><%= title %></h1>
-<p>Welcome to <%= data['SAR']['omb'] %></p>
-<ul>
-    <li><a href="/">myHome</a></li>
-    <li><a href="/myFinances">myFinances</a></li>
-    <li><a href="/myPersonalInfo">myPersonalInfo</a></li>
-    <li><a href="/myEducation">myEducation</a></li>
-    <li><a href="/myLoans">myLoans</a></li>
-    <li><a href="/myFamily">myFamily</a></li>
-    <li><a href="/myBudget">myBudget</a></li>
-    <li><a href="/myTaxes">myTaxes</a></li>
-    <li><a href="/myActionables">myActionables</a></li>
-</ul>
-</body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+</body>
 </html>
+
+
