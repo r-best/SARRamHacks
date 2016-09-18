@@ -3,10 +3,12 @@
  */
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('myFinances', { title: 'My Finances' });
+    var json = JSON.parse(fs.readFileSync('..\\brock.json', 'utf8'));
+    res.render('MyFinaces', { data: json, title: 'My Finaces'});
 });
 
 module.exports = router;

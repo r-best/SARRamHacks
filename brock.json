@@ -36,7 +36,7 @@
 "form":"1040",
 "filing_status":"Single",
 "agi":"4378.01",
-"tax_paid":"1260.72",},
+"tax_paid":"1260.72"},
 
 "PARENT":{
 "marital_status":"Married",
@@ -57,16 +57,15 @@
 "parent_form":"1040",
 "parent_filing_status":"Married - Filed Joint Return",
 "parent_agi":"456791.38",
-parent_tax_paid":"129270.21"
+"parent_tax_paid":"129270.21",
 "num_fam_members":"5",
 "num_fam_college":"2"},
 
 "LOAN":{
-ffel_sub":"$10,000",
+"ffel_sub":"$10,000",
 "ffel_unsub":"$3,000",
 "ffel_com":"$13,000",
 "perk_total_year":"$0",
 "perk_total":"$0",
-"teach_loans":"$0"
-}
+"teach_loans":"$0"}
 }
