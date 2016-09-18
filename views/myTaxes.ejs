@@ -14,31 +14,34 @@
 
 <body>
 <span >
-<h1 style="text-align:center">Family</h1>
+<h1 style="text-align:center">Taxes</h1>
 <div class="testdiv" class="columndiv" class="row">
-<div class="flex-item-1" data-toggle="collapse" data-target="#parent1"><img src="images/mom with form-01.png" style="max-width:80%;
+<div class="flex-item-1" data-toggle="collapse" data-target="#mytax"><img src="images/brother-01.png" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">You</p>
+<p style="text-align:center; margin-top:.2em"><strong>Filing Status: </strong> <%=data["TAX"]["filing_status"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Adjusted Gross Income:</strong> <%=data["TAX"]["agi"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Taxes Paid:</strong> <%=data["TAX"]["tax_paid"]%></p>
+</div>
+
+<div class="flex-item-1" data-toggle="collapse" data-target="#p1tax"><img src="images/mom with form-01.png" style="max-width:80%;
 max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
 <p style="text-align:center; margin-top:.2em">Parent 1</p>
-<p style="text-align:center; margin-top:.2em"><strong>Last Year's Income:</strong> Yes</p>
-<p style="text-align:center; margin-top:.2em"><strong>College:</strong> <%=data["USER"]["parent1_ed"]%></p>
 <p style="text-align:center; margin-top:.2em"><strong>Income:</strong> <%=data["PARENT"]["parent1_income"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Filing Status:</strong> <%=data["PARENT"]["parent_filing_status"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Taxes Paid:</strong> <%=data["PARENT"]["parent_tax_paid"]%></p>
 </div>
 
-<div class="flex-item-1" data-toggle="collapse" data-target="#parent2"><img src="images/dad with form-01.png" style="max-width:80%;
+<div class="flex-item-1" data-toggle="collapse" data-target="#p2tax"><img src="images/dad with form-01.png" style="max-width:80%;
 max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+
 <p style="text-align:center; margin-top:.2em">Parent 2</p>
-<p style="text-align:center; margin-top:.2em"><strong>High School:</strong> <%=data["USER"]["parent2_ed"]%></p>
-<p style="text-align:center; margin-top:.2em"><strong>College:</strong> No</p>
 <p style="text-align:center; margin-top:.2em"><strong>Income:</strong> <%=data["PARENT"]["parent2_income"]%></p>
-</div>
-
-<div class="flex-item-1" data-toggle="collapse" data-target="#siblings"><img src="images/sister-01.png" style="max-width:80%;
-max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
-<p style="text-align:center; margin-top:.2em">Siblings</p>
-<p style="text-align:center; margin-top:.2em"><strong>College:</strong> <%=data["PARENT"]["num_fam_college"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Filing Status:</strong> <%=data["PARENT"]["parent_filing_status"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Taxes Paid:</strong> <%=data["PARENT"]["parent_tax_paid"]%></p>
 </div>
  <div>
-  <div id="parent1" class="collapse">
+  <div id="mytax" class="collapse">
     <ul>
     <li><strong>Parent 1 Full Name:</strong> <%=data["PARENT"]["parent1_name"]%> </li>
     <li><strong>Parent 1 Date of Birth:</strong> <%=data["PARENT"]["parent1_dob"]%> </li>
@@ -49,7 +52,7 @@ max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"
     </ul>
   </div>
   <br />
-  <div id="parent2" class="collapse">
+  <div id="p1tax" class="collapse">
     <ul>
     <li><strong>Parent 2 Full Name:</strong> <%=data["PARENT"]["parent2_name"]%></li>
     <li><strong>Parent 2 Date of Birth:</strong> <%=data["PARENT"]["parent2_dob"]%> </li>
@@ -57,7 +60,7 @@ max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"
     </ul>
   </div>
   <br />
-  <div id="siblings" class="collapse">
+  <div id="p2tax" class="collapse">
     <ul>
       <li><strong>Attending College:</strong> <%=data["PARENT"]["num_fam_college"]%></li>
     </ul>
