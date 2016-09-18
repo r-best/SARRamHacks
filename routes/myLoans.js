@@ -7,7 +7,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var json = JSON.parse(fs.readFileSync('..\\brock.json', 'utf8'));
+    var json = JSON.parse(fs.readFileSync('brock.json', 'utf8'));
     res.render('myLoans', { data: json, title:"My Loans"});
 });
 
