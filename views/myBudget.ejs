@@ -1,3 +1,110 @@
-<div class="testdiv">
-        <h1>Budget</h1>
+<script>
+	/**
+	* principal = initial amount of loan
+	* payment = what percentage of average monthly salary is paid to loan each month
+	*/
+	function calculateInterest(){
+		var principal = document.getElementById("principal").value;
+		if(principal > 100000){
+			document.getElementById("principal").value = 100000;
+			principal = 100000;
+		}
+		if(principal < 0){
+			document.getElementById("principal").value = 0;
+			principal = 0;
+		}
+		var balance = principal;
+		payment = document.getElementById("payment").value * .01;
+		if(payment > 100){
+			document.getElementById("payment").value = 100;
+			payment = 100 * .01;
+		}
+		if(payment < 0){
+			document.getElementById("payment").value = 0;
+			payment = 0;
+		}
+		var years = 0;
+		var income = getIncome(document.getElementById("major").options[document.getElementById("major").selectedIndex].value);
+		while(balance > 0){
+			var subtract = income * payment;
+			var add = principal * Math.pow(1+(.0376 / 4), 4*.25) - principal;
+			
+			if(add > subtract){
+				years = "Interest is greater than payments! Loan will never be payed off!";
+				break;
+			}
+			else{
+				balance -= subtract;
+				balance += add;
+			}
+			
+			years += .25;
+		}
+		document.getElementById("result").innerHTML = years;
+		return years;
+	}
+
+	function getIncome(major){
+		var income = 0;
+		switch(major){
+			case "Engineering":
+				income = 64891;
+				break;
+			case "Computer Science":
+				income = 61321;
+				break;
+			case "Math and Sciences":
+				income = 55087;
+				break;
+			case "Business":
+				income = 52236;
+				break;
+			case "Agriculture/Natural Resources":
+				income = 48729;
+				break;
+			case "Healthcare":
+				income = 48712;
+				break;
+			case "Communications":
+				income = 47047;
+				break;
+			case "Social Sciences":
+				income = 46585;
+				break;
+			case "Humanities":
+				income = 46065;
+				break;
+			case "Education":
+				income = 34891;
+				break;
+			//Data from http://time.com/money/3829776/heres-what-the-average-grad-makes-right-out-of-college/
+		}
+		return income/12;
+	}
+</script>
+<h1 style="text-align:center;">Budget</h1>
+<div class="testdiv" onload="calculateInterest()">
+	<div>
+		<h3>Loan Repayment Calculator</h3>
+		<form>
+			<p>Principal Amount: <input id="principal" type="number" name="principal" onchange="calculateInterest()" value="10000" min="0" max="100000"/></p>
+			<p>Major: 
+				<select id="major" onchange="calculateInterest()">
+					<option value="Engineering">Engineering</option>
+					<option value="Computer Science">Computer Science</option>
+					<option value="Math and Sciences">Math and Sciences</option>
+					<option value="Business">Business</option>
+					<option value="Agriculture/Natural Resources">Agriculture/Natural Resources</option>
+					<option value="Healthcare">Healthcare</option>
+					<option value="Communications">Communications</option>
+					<option value="Social Sciences">Social Sciences</option>
+					<option value="Humanities">Humanities</option>
+					<option value="Education">Education</option>
+				</select>
+			</p>
+			<p>Payment*: <input id="payment" type="number" name="payment" onchange="calculateInterest()" value="5" ="0" max="100"/></p>
+			<p>*percentage of average monthly income based on major that is paid to loan</p>
+		</form>
+		<p style="font-weight:bold;">Years it will take to repay loan: <p id="result"></p></p>
+	</div>
 </div>
