@@ -1,3 +1,39 @@
-<div class="testdiv">
-        <h1>Education</h1>
+
+        <span >
+<h1 style="text-align:center">Education</h1>
+<div class="testdiv" class="columndiv" class="row">
+<div class="flex-item-1" data-toggle="collapse" data-target="#highschool"><img src="http://images.all-free-download.com/images/graphiclarge/man_silhouette_clip_art_9510.jpg" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">High School</p>
+    <p style="text-align:center; margin-top:.2em"><strong>High School:</strong> <%=data["USER"]["hs_name"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Completed:</strong> <%=data["USER"]["hs_complete"]%></p>
 </div>
+<div class="flex-item-1" data-toggle="collapse" data-target="#colleges"><img src="http://images.all-free-download.com/images/graphiclarge/man_silhouette_clip_art_9510.jpg" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">College</p>
+</div>
+<div class="flex-item-1" data-toggle="collapse" data-target="#degree"><img src="http://images.all-free-download.com/images/graphiclarge/man_silhouette_clip_art_9510.jpg" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">Degree Progress</p>
+</div>
+<div>
+  <div id="colleges" class="collapse">
+    <p>Colleges Attended</p>
+    <ul>
+    <li><strong>Name and Location:</strong> Duke University-Durham, NC</li>
+    <li><strong>Name and Location:</strong> University of Virginia, Charlottesville, VA</li>
+    <li><strong>Name and Location:</strong> Princeton University, Princinton, NJ</li>
+    <li><strong>Name and Location:</strong> Virginia Commonwealth University-Richmond, VA</li>
+    </ul>
+  </div>
+  <div id="degree" class="collapse">
+    <p>Degree</p>
+    <ul>
+    <li><strong>Degree Type:</strong> <%=data["USER"]["degree_type"]%> </li>
+    <li><strong>Completed:</strong> <%=data["USER"]["bc_complete"]%> </li>
+    <li><strong>Year:</strong> <%=data["USER"]["bc_grade"]%> </li>
+    </ul>
+  </div>
+</div>
+</div>
+</span>
