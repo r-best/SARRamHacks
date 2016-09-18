@@ -1,0 +1,72 @@
+{
+"SAR":{
+"date":"April 29, 2016",
+"omb":"1845-0001",
+"drn":"9756"},
+
+"USER":{
+"efc":"89999",
+"name":"Brock Erickson",
+"address":"7116 Maplewood st",
+"city":"Elberton",
+"state":"GA",
+"zip":"30635",
+"ssn":"100034919",
+"dob":"11-04-1998",
+"phone":"4045656781",
+"dl_num":"321654789",
+"dl_state":"GA",
+"email":"BrockKerickson@gmail.com",
+"citizen":"Citizen",
+"marital_status":"Single",
+"sex":"Male",
+"parent1_ed":"College or Beyond",
+"parent2_ed":"High School",
+"hs_complete":"Yes",
+"hs_name":"Elberton High School",
+"hs_city":"Elberton",
+"hs_state":"GA",
+"colleges (JSON String)":"",
+"bc_complete":"No",
+"bc_grade":"4th Year",
+"degree_type":"1st Bachelors",
+"avg_salary":"45000"},
+
+"TAX":{
+"form":"1040",
+"filing_status":"Single",
+"agi":"4378.01",
+"tax_paid":"1260.72",},
+
+"PARENT":{
+"marital_status":"Married",
+"date_married":"06-1982",
+"parent1_ssn":"890-56-8310",
+"parent1_name":"Mark Erickson",
+"parent1_dob":"03-30-1972",
+"parent2_ssn":"131-42-3934",
+"parent2_name":"Jannet Erickson",
+"parent2_dob":"12/18/1974",
+"parent_email":"THEEERICKSONS@GMAIL.COM",
+"parent_state":"GA",
+"parent1_income":"$228,395.79",
+"parent2_income":"$397,509.42",
+"parent_cash":"$139,573.52",
+"parent_invest":"$95,683.09",
+"parent_IRA":"$289,241.21",
+"parent_form":"1040",
+"parent_filing_status":"Married - Filed Joint Return",
+"parent_agi":"456791.38",
+parent_tax_paid":"129270.21"
+"num_fam_members":"5",
+"num_fam_college":"2"},
+
+"LOAN":{
+ffel_sub":"$10,000",
+"ffel_unsub":"$3,000",
+"ffel_com":"$13,000",
+"perk_total_year":"$0",
+"perk_total":"$0",
+"teach_loans":"$0"
+}
+}
