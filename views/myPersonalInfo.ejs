@@ -7,10 +7,10 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron" style="font-size:20px;border-radius: 25px;">
+    <div class="jumbotron" style="background-color:gainsboro;font-size:20px;border-radius: 25px;">
 <div style="padding:10px 50px 50px 50px;horiz-align: center">
     <div class="row" style="text-align: center">
-        <h1>Personal Information</h1>
+        <h1 style="margin-bottom:40px;">Personal Information</h1>
     </div>
     <div class="row">
         <div class="col-lg-6">
@@ -19,35 +19,37 @@
                     <div style="border-radius: 20px;float:left;margin: 35px 0px 35px 30px; background-color:blueviolet; width:90px; height:130px;">
 
                     </div>
-                    <div style="float:left;width:225px;margin-top:55px;margin-bottom:20px;line-height: 27px">
-                        <ul>
-                            <li>Name:------</li>
-                            <li>DOB:-------</li>
-                            <li>Address:---------</li>
-                            <li>Sex:------ </li>
-                            <li>License Number:----</li>
+                    <div style="font-size:16px;float:left;width:225px;margin-top:45px;margin-bottom:20px;line-height: 24px">
+                        <ul style="list-style: none;">
+                            <li><strong>Name: </strong><%= data['USER']['name'] %></li>
+                            <li><strong>DOB: </strong><%= data['USER']['dob'] %></li>
+                            <li><strong>Address: </strong><%= data['USER']['address'] %></li>
+                            <li><strong>Sex: </strong><%= data['USER']['sex'] %></li>
+                            <li><strong>License Number: </strong><%= data['USER']['dl_num'] %></li>
                         </ul>
                     </div>
                 </div>
 
             </div>
-            <div style="line-height: 50px">
-                <ul>
-                    <li>Marital Status:</li>
-                    <li>Date of Marital Status Change:</li>
+            <div style="line-height: 60px">
+                <ul style="list-style: none;">
+                    <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
+                    <li><strong>Date of Marital Status Change: </strong>n/a</li>
+                    <li><strong>Registered for service ?: </strong>Yes</li>
                 </ul>
             </div>
         </div>
-        <div class="col-lg-6"  style="line-height: 50px">
+        <div class="col-lg-6"  style="line-height: 60px">
 
-            <ul>
-                <li>Phone Number:</li>
-                <li>SSN:</li>
-                <li>Email Address:</li>
-                <li>Citizen ?:</li>
-                <li>Legal Residence Before 01-01-2011:</li>
-                <li>Registered for service ?:</li>
-                <li>Drug Conviction Affecting Eligibility:</li>
+            <ul style="list-style: none;">
+                <li>&nbsp</li>
+                <li><strong>Phone Number: </strong><%= data['USER']['phone'] %></li>
+                <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
+                <li><strong>Email Address: </strong><%= data['USER']['email'] %></li>
+                <li><strong>Citizen ?: </strong>Yes</li>
+                <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
+
+                <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
             </ul>
         </div>
     </div>
