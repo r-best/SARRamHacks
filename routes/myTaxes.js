@@ -7,7 +7,7 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var json = JSON.parse(fs.readFileSync('..\\brock.json', 'utf8'));
+	var json = JSON.parse(fs.readFileSync('brock.json', 'utf8'));
     res.render('myTaxes', { data: json, title: 'My Taxes'});
 });
 
