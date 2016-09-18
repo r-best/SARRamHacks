@@ -11,7 +11,6 @@
 <script type="text/javascript">
 window.onload = function () {
     $.get('/json').done(function(data){ 
-        console.log(data)
         var total = parseInt(data['LOAN']['ffel_sub_n']) + parseInt(data['LOAN']['ffel_unsub_n'])
         var chart1 = new CanvasJS.Chart("chartContainer",
     {
@@ -29,16 +28,16 @@ window.onload = function () {
         data: [
         {        
             indexLabelFontSize: 20,
-            indexLabelFontFamily: "Monospace",       
-            indexLabelFontColor: "darkgrey", 
+            indexLabelFontColor: "white",
+            indexLabelFontFamily: "Monospace",        
             indexLabelLineColor: "darkgrey",        
-            indexLabelPlacement: "outside",
+            indexLabelPlacement: "inside",
             type: "pie",       
             showInLegend: true,
             toolTipContent: "${y} - <strong>#percent%</st rong>",
             dataPoints: [
-                {  y: total/4, legendText:"Substidized"},
-                {  y: (3*total)/4, legendText:"unSubstidized"},
+                {  indexLabel:"{y}", y: total/4, legendText:"This Year"},
+                {  indexLabel:"{y}", y: (3*total)/4, legendText:"Previous Years"},
             ]
         }
         ]
@@ -116,14 +115,21 @@ window.onload = function () {
 <body>
 <h1 style="text-align:center !important">Loan Data</h1>
 <div class="testdiv">
-<div class="space" id="chartContainer" style="height: 200px; width: 10em; display:inline-block;margin:0 5em">
+<div id="chartContainer3" style="height:20em; width:20em;"></div>
+<div id="chartContainer2" style="height:20em; width:20em;"></div>
+<div id="chartContainer"style="height:20em; width:20em;"></div>
+
+
+<!-- <div class="space" id="chartContainer" style="height: 200px; width: 10em; display:inline-block;margin:0 1em">
 </div>
 
-<div class="space" id="chartContainer2" style="height: 200px; width: 10em; display:inline-block;margin:0 5em">
+<div class="space" id="chartContainer2" style="height: 200px; width: 10em; display:inline-block;margin:0 1em">
 </div>
 
-<div class="space" id="chartContainer3" style="height: 200px; width: 10em;display:inline-block; margin:0 5em"></div>
+<div class="space" id="chartContainer3" style="height: 200px; width: 10em;display:inline-block; margin:0 1em"></div> -->
+
 </div>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

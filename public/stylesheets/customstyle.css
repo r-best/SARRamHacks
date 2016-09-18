@@ -26,9 +26,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
    display: none;
 }
 
-.space{
-    margin: 0 20em;
-}
 
 p {
     line-height: 120%;
@@ -37,15 +34,10 @@ p {
     padding-top: 10px;
 }
 
-
 .testdiv{
-	display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    display: flex;
-    -webkit-flex-flow: row wrap;
     justify-content: space-around;
 		 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,d6d6d7+100 */
 background: #ffffff; /* Old browsers */
