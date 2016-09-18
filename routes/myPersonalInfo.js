@@ -4,10 +4,12 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var path = require('path');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {;
-    var json = JSON.parse(fs.readFileSync('/SARRamhacks/brock.json', 'utf8'));
+router.get('/', function(req, res, next) {
+    var dirpath = path.resolve("brock.json");
+    var json = JSON.parse(fs.readFileSync(dirpath, 'utf8'));
     res.render('myPersonalInfo', { data: json, title: 'My Personal Infos'});
 });
 
