@@ -11,4 +11,9 @@ router.get('/', function(req, res, next) {
     res.render('myLoans', { data: json, title:"My Loans"});
 });
 
+router.get('/json', function(req, res, next) {
+	var json = JSON.parse(fs.readFileSync('brock.json', 'utf8'));
+    res.send(json);
+});
+
 module.exports = router;
