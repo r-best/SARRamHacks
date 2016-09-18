@@ -4,12 +4,10 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-var path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var dirpath = path.resolve("brock.json");
-    var json = JSON.parse(fs.readFileSync(dirpath, 'utf8'));
+    var json = JSON.parse(fs.readFileSync('brock.json' , 'utf8'));
     res.render('myPersonalInfo', { data: json, title: 'My Personal Infos'});
 });
 
