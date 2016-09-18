@@ -119,14 +119,17 @@ window.onload = function () {
   </head>
   <body>
   <br>
+
+    <% include header.ejs %>
+
+  <hr id="top">
+
+
+
+
+    <hr id="top">
       <% include myActionables.ejs%>
       <hr>
-    <% include header.ejs %>
-    <div class="testdiv" style="margin-top:2em;justify-content: flex-end;">
-    <div style="margin:.370em;float:left;" ><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>You have actions you need to take!<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;|</div>
-    <p style="margin:.5em">Total Loan Balance:<%= data['LOAN']['ffel_com'] %> &nbsp;|&nbsp;<i style="color:#369EAD" class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;EFC:<%= data['USER']['efc'] %>&nbsp;|&nbsp;Loged in: Brock Erickson</p> 
-    </div>
-    <hr id="top">
     <% include myLoans.ejs %>
     <hr>
     <% include myPersonalInfo.ejs%>

@@ -1,3 +1,72 @@
-<div class="testdiv">
-        <h1>Taxes</h1>
+<!DOCTYPE html>
+<html>
+<head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css' />
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel='stylesheet' href='/stylesheets/customstyle.css' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+<span >
+<h1 style="text-align:center">Family</h1>
+<div class="testdiv" class="columndiv" class="row">
+<div class="flex-item-1" data-toggle="collapse" data-target="#parent1"><img src="images/mom with form-01.png" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">Parent 1</p>
+<p style="text-align:center; margin-top:.2em"><strong>Last Year's Income:</strong> Yes</p>
+<p style="text-align:center; margin-top:.2em"><strong>College:</strong> <%=data["USER"]["parent1_ed"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>Income:</strong> <%=data["PARENT"]["parent1_income"]%></p>
 </div>
+
+<div class="flex-item-1" data-toggle="collapse" data-target="#parent2"><img src="images/dad with form-01.png" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">Parent 2</p>
+<p style="text-align:center; margin-top:.2em"><strong>High School:</strong> <%=data["USER"]["parent2_ed"]%></p>
+<p style="text-align:center; margin-top:.2em"><strong>College:</strong> No</p>
+<p style="text-align:center; margin-top:.2em"><strong>Income:</strong> <%=data["PARENT"]["parent2_income"]%></p>
+</div>
+
+<div class="flex-item-1" data-toggle="collapse" data-target="#siblings"><img src="images/sister-01.png" style="max-width:80%;
+max-height:80%; display:block; margin:auto; margin-top:.2em; border-radius:20px"/>
+<p style="text-align:center; margin-top:.2em">Siblings</p>
+<p style="text-align:center; margin-top:.2em"><strong>College:</strong> <%=data["PARENT"]["num_fam_college"]%></p>
+</div>
+ <div>
+  <div id="parent1" class="collapse">
+    <ul>
+    <li><strong>Parent 1 Full Name:</strong> <%=data["PARENT"]["parent1_name"]%> </li>
+    <li><strong>Parent 1 Date of Birth:</strong> <%=data["PARENT"]["parent1_dob"]%> </li>
+    <li><strong>Parent 1 Social Security Number:</strong> <%=data["PARENT"]["parent1_ssn"]%> </li>
+    <li><strong>Marital Status:</strong> <%=data["PARENT"]["marital_status"]%> <stong>Date:</strong> <%=data["PARENT"]["date_married"]%> </li>
+    <li><strong>Parents' E-mail Address:</strong>  <%=data["PARENT"]["parent_email"]%> </li>
+    <li><strong>Parents' State of Legal Residence:</strong> <%=data["PARENT"]["parent_state"]%></li>
+    </ul>
+  </div>
+  <br />
+  <div id="parent2" class="collapse">
+    <ul>
+    <li><strong>Parent 2 Full Name:</strong> <%=data["PARENT"]["parent2_name"]%></li>
+    <li><strong>Parent 2 Date of Birth:</strong> <%=data["PARENT"]["parent2_dob"]%> </li>
+    <li><strong>Parent 2 Social Security Number:</strong> <%=data["PARENT"]["parent2_ssn"]%> </li>
+    </ul>
+  </div>
+  <br />
+  <div id="siblings" class="collapse">
+    <ul>
+      <li><strong>Attending College:</strong> <%=data["PARENT"]["num_fam_college"]%></li>
+    </ul>
+  </div>
+ </div>
+</div>
+        </div>
+</span>
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</html>
