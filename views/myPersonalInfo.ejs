@@ -1,17 +1,10 @@
-<div class="container" id="myPersonalInfo">
-    <div class="jumbotron" style="background-color:gainsboro;font-size:20px;border-radius: 25px;">
-        <div style="padding:10px 50px 50px 50px;horiz-align: center">
-            <div class="row" style="text-align: center">
-                <h1 style="margin-bottom:40px;">Personal Information</h1>
-            </div>
-            <div class="row">
+<div class="columndiv" id="myPersonalInfo">
+    <span>
+        <div class="testdiv" style="line-height:5em;">
+            <div class="row"  data-toggle="collapse" data-target="#pInfo">
                 <div class="col-lg-6">
                     <div style="margin:20px;">
-                        <img src="images/dl.png" data-toggle="collapse" data-target="#pInfo #pInfo2">
-                        <div style="border-radius: 15px;background-color: darkgrey;width:360px;height: 230px;" data-toggle="collapse" data-target="#pInfo">
-                            <div style="border-radius: 20px;float:left;margin: 35px 0px 35px 30px; background-color:blueviolet; width:90px; height:130px;">
-
-                        </div>
+                        <div  style="background-image:url('images/dl.png');border-radius: 15px;width:444px;height: 282px;">
                             <div style="font-size:16px;float:left;width:225px;margin-top:45px;margin-bottom:20px;line-height: 24px">
                                 <ul style="list-style: none;">
                                     <li><strong>Name: </strong><%= data['USER']['name'] %></li>
@@ -22,30 +15,27 @@
                                 </ul>
                             </div>
                         </div>
-
-                    </div>
-                    <div style="line-height: 60px" id="pInfo" class="collapse">
-                        <ul style="list-style: none;">
-                            <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
-                            <li><strong>Date of Marital Status Change: </strong>n/a</li>
-                            <li><strong>Registered for service ?: </strong>Yes</li>
-                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-6"  style="line-height: 60px" id="pInfo2" class="collapse">
-
-                    <ul style="list-style: none;">
-                        <li>&nbsp</li>
+                <div class="col-lg-6">
+                    <ul style="list-style:none;">
                         <li><strong>Phone Number: </strong><%= data['USER']['phone'] %></li>
-                        <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
                         <li><strong>Email Address: </strong><%= data['USER']['email'] %></li>
+                    </ul>
+                </div>
+                <div id="pInfo" class="panel-collapse collapse">
+                    <ul class="list-group" style="list-style:none;">
+                        <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
+                        <li><strong>Date of Marital Status Change: </strong>n/a</li>
+                        <li><strong>Registered for service ?: </strong>Yes</li>
+                        <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
                         <li><strong>Citizen ?: </strong>Yes</li>
                         <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
-
                         <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
                     </ul>
                 </div>
             </div>
+
         </div>
-    </div>
+    </span>
 </div>
