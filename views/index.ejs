@@ -118,6 +118,9 @@ window.onload = function () {
 </script>
   </head>
   <body>
+  <br>
+      <% include myActionables.ejs%>
+      <hr>
     <% include header.ejs %>
     <div class="testdiv" style="margin-top:2em;justify-content: flex-end;">
     <div style="margin:.370em;float:left;" ><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>You have actions you need to take!<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;|</div>
@@ -125,8 +128,6 @@ window.onload = function () {
     </div>
     <hr id="top">
     <% include myLoans.ejs %>
-    <hr>
-    <% include myActionables.ejs%>
     <hr>
     <% include myPersonalInfo.ejs%>
     <hr id="myFamily">

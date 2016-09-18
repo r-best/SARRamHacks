@@ -4,15 +4,15 @@
     <span>
         <div class="testdiv" >
             <div class="row"  data-toggle="collapse" data-target="#pInfo">
-
+                <div class="col-lg-1"><p></p></div>
                 <div class="col-lg-6">
-                    <div style="margin:20px;">
+                    <div style="margin:20px;margin:auto;">
                         <div  style="background-image:url('images/dl.png');border-radius: 15px;width:444px;height: 282px;">
 
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" style="line-height:4em;">
+                <div class="col-lg-5" style="line-height:4em;margin:auto;">
                     <ul style="list-style:none;">
                         <li><strong>Data Release Number (DRN): </strong><%= data['SAR']['date'] %></li>
                         <li><strong>Expected Family Contribution (EFC): </strong><%= data['SAR']['drn'] %></li>
@@ -21,23 +21,23 @@
                         <li><strong>Email Address: </strong><%= data['USER']['email'] %></li>
                     </ul>
                 </div>
-                <div class="row collapse" id="pInfo" style="line-height:5em;">
+                <div class="row collapse" id="pInfo" style="line-height:5em;margin:auto;">
                     <div class="col-lg-1"><p></p></div>
                     <div class="col-lg-5">
-                        <ul style="list-style:none;">
+                        <ul style="list-style:none;margin:auto;">
                             <li><strong>Legal Residence Before 01-01-2011: </strong>Yes</li>
                             <li><strong>Drug Conviction Affecting Eligibility: </strong>No</li>
                             <li><strong>Registered for service ?: </strong>Yes</li>
                         </ul>
                     </div>
                     <div class="col-lg-3">
-                        <ul style="list-style:none;">
+                        <ul style="list-style:none;margin:auto;">
                             <li><strong>SSN: </strong><%= data['USER']['ssn'] %></li>
                             <li><strong>Citizen ?: </strong>Yes</li>
                         </ul>
                     </div>
                     <div class="col-lg-3">
-                        <ul style="list-style:none;">
+                        <ul style="list-style:none;margin:auto;">
                             <li><strong>Marital Status: </strong><%= data['USER']['marital_status'] %></li>
                             <li><strong>Date of Marital Status Change: </strong>n/a</li>
                         </ul>
