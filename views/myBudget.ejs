@@ -79,6 +79,7 @@
 				break;
 			//Data from http://time.com/money/3829776/heres-what-the-average-grad-makes-right-out-of-college/
 		}
+		document.getElementById("salary").innerHTML = income;
 		return income/12;
 	}
 </script>
@@ -102,9 +103,10 @@
 					<option value="Education">Education</option>
 				</select>
 			</p>
+			<p>Average salary of this major: <span id="salary"></span></p>
 			<p>Payment*: <input id="payment" type="number" name="payment" onchange="calculateInterest()" value="5" ="0" max="100"/></p>
 			<p>*percentage of average monthly income based on major that is paid to loan</p>
 		</form>
-		<p style="font-weight:bold;">Years it will take to repay loan: <p id="result"></p></p>
+		<p style="font-weight:bold;">Years it will take to repay loan: <span id="result"></span></p>
 	</div>
 </div>
