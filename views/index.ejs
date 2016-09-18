@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <style type="text/css">
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 1% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+</style>
     <title><%= title %></title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -11,123 +62,35 @@
     <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.js'></script>
-
-<script type="text/javascript">
-window.onload = function () {
-    $.get('/myLoans/json').done(function(data){ 
-        console.log(data)
-        var total = parseInt(data['LOAN']['ffel_sub_n']) + parseInt(data['LOAN']['ffel_unsub_n'])
-        var chart1 = new CanvasJS.Chart("chartContainer",
-    {
-        backgroundColor: null,
-        width:275,
-        title:{
-            text: "Balance distribution"
-        },
-                animationEnabled: true,
-        legend:{
-            fontSize:15,
-            verticalAlign: "bottom",
-            horizontalAlign: "center"
-        },
-        data: [
-        {        
-            indexLabelFontSize: 20,
-            indexLabelFontFamily: "Monospace",       
-            indexLabelFontColor: "darkgrey", 
-            indexLabelLineColor: "darkgrey",        
-            indexLabelPlacement: "outside",
-            type: "pie",       
-            showInLegend: true,
-            toolTipContent: "${y} - <strong>#percent%</st rong>",
-            dataPoints: [
-                {  y: total/4, legendText:"Substidized"},
-                {  y: (3*total)/4, legendText:"unSubstidized"},
-            ]
-        }
-        ]
-    });
-    chart1.render();
-    var chart2 = new CanvasJS.Chart("chartContainer2",
-    {
-        backgroundColor: null,
-        width:275,
-        title:{
-            text: "Type of Student Loan"
-        },
-                animationEnabled: true,
-        legend:{
-            fontSize:15,
-            verticalAlign: "bottom",
-            horizontalAlign: "center"
-        },
-        data: [
-        {        
-            indexLabelFontSize: 20,
-            indexLabelFontFamily: "Monospace",       
-            indexLabelFontColor: "darkgrey", 
-            indexLabelLineColor: "darkgrey",        
-            indexLabelPlacement: "outside",
-            type: "pie",       
-            showInLegend: true,
-            toolTipContent: "{y} - <strong>#percent%</strong>",
-            dataPoints: [
-                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
-                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
-            ]
-        }
-        ]
-    });
-    chart2.render();
-    var chart3 = new CanvasJS.Chart("chartContainer3",
-    {
-        backgroundColor: null,
-        width:275,
-        title:{
-            text: "Type of Student Loan"
-        },
-                animationEnabled: true,
-        legend:{
-            fontSize:15,
-            verticalAlign: "bottom",
-            horizontalAlign: "center"
-        },
-        data: [
-        {        
-            indexLabelFontSize: 20,
-            indexLabelFontFamily: "Monospace",       
-            indexLabelFontColor: "darkgrey", 
-            indexLabelLineColor: "darkgrey",        
-            indexLabelPlacement: "outside",
-            type: "pie",       
-            showInLegend: true,
-            toolTipContent: "{y} - <strong>#percent%</strong>",
-            dataPoints: [
-                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
-                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
-            ]
-        }
-        ]
-    });
-    chart3.render();
-
-
-
-     });
-}
-</script>
   </head>
   <body>
   <br>
 
     <% include header.ejs %>
-
-  <hr id="top">
-
-
-
-
     <hr id="top">
+    <div id="openModal" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h3 style="text-align: center;"><strong>What You Really Need to Know!</strong></h3>
+          <p style="text-align: center;"><strong>Expected Family Contribution (EFC)</strong></p>
+          <ul>
+              <li>FAFSA information is analyzed to rank loan and grant opportunities from 0 to 99,999.</li>
+              <li>The lower your number, the more opportunities for aid you have.</li>
+          </ul>
+          <p style="text-align: center;"><strong>Finances: Loans, Grants and Scholarships</strong></p>
+          <ul>
+              <li>There are lots of opportunities that can help you on your higher education journey.</li>
+              <li>Loans are monies given with the expectation they will be repayed; federal loans generally have lower (better) interest rates than private loans.</li>
+              <li>Grants and Scholarships are given to the student without expectations of repayment.</li>
+              <li>Paying for college can also be made easier by work-study (though students aren't guaranteed jobs), and tax credits.</li>
+          </ul>
+          <p style="text-align:center;"><strong>Final Notes</strong></p>
+          <ul style="padding-bottom:20px;">
+              <li>Keep in mind: You can lose your awards if you are convicted of drug distribution or possession for an offense that occurred while you were receiving aid.</li>
+              <li>Now, have fun with your <strong>SAR</strong>-ry Companion!</li>
+          </ul>
+        </div>
+    </div>
       <% include myActionables.ejs%>
       <hr>
     <% include myLoans.ejs %>

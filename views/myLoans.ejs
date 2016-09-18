@@ -47,31 +47,32 @@ window.onload = function () {
     {
         backgroundColor: null,
         width:275,
-        title:{
-            text: "Type of Student Loan"
-        },
-                animationEnabled: true,
-        legend:{
-            fontSize:15,
-            verticalAlign: "bottom",
-            horizontalAlign: "center"
-        },
-        data: [
-        {        
-            indexLabelFontSize: 20,
-            indexLabelFontFamily: "Monospace",       
-            indexLabelFontColor: "darkgrey", 
-            indexLabelLineColor: "darkgrey",        
-            indexLabelPlacement: "outside",
-            type: "pie",       
-            showInLegend: true,
-            toolTipContent: "{y} - <strong>#percent%</strong>",
-            dataPoints: [
-                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"This Year"},
-                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Past Years"},
-            ]
-        }
+      title:{
+        text: "EFC (Estimated Family Contribution)"    
+      },
+      animationEnabled: true,
+      axisY: {
+        title: "EFC"
+      },
+      legend: {
+        verticalAlign: "bottom",
+        horizontalAlign: "center"
+      },
+      theme: "theme2",
+      data: [
+
+      {        
+        type: "column",  
+        showInLegend: true, 
+        legendMarkerColor: "grey",
+        legendText: "Statistics",
+        dataPoints: [      
+        {y: 99999, label: "MAX EFC"},
+        {y: 89999,  label: "Your EFC" },
+        {y: 49999,  label: "AVG EFC"},       
         ]
+      }   
+      ]
     });
     chart2.render();
     var chart3 = new CanvasJS.Chart("chartContainer3",
@@ -99,8 +100,8 @@ window.onload = function () {
             showInLegend: true,
             toolTipContent: "{y} - <strong>#percent%</strong>",
             dataPoints: [
-                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"Subsidized (No Intrest now)"},
-                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Unsubsidized (Intrest now)"},
+                {  y: parseInt(data['LOAN']['ffel_sub_n']), legendText:"Subsidized (No Interest now)"},
+                {  y: parseInt(data['LOAN']['ffel_unsub_n']), legendText:"Unsubsidized (Interest now)"},
             ]
         }
         ]

@@ -20,6 +20,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><img alt="Link to Fafsa" src="images/fafsalogo.jpg" href="https://studentaid.ed.gov/sa/" style="height:4em"/></li>
             </ul>
+            <a href="#openModal" style="padding-top: 6px; float: right; margin-right:10px; margin-top:2px;"><button class="btn btn-success">Learn about EFC and More!</button></a>
         </div>
     
 </nav>
@@ -35,7 +36,7 @@
                 Total Loan Balance: <%= data['LOAN']['ffel_com'] %>
             </div>
             <div class="col-sm-3" style="text-align: center;">
-                EFC: <%= data['USER']['efc'] %><i style="color:#369EAD" class="fa fa-question-circle" aria-hidden="true"></i>
+                EFC: <%= data['USER']['efc'] %>
             </div>
             <div class="col-sm-3" style="text-align: center;">
                 Logged in: Brock Erickson
