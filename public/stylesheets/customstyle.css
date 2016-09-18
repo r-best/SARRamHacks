@@ -30,6 +30,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     margin: 0 20em;
 }
 
+p {
+    line-height: 120%;
+}
+#parent1 {
+    padding-top: 10px;
+}
+
+
 .testdiv{
 	display: -webkit-box;
     display: -moz-box;
