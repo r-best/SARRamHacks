@@ -7,7 +7,7 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {;
-    var json = JSON.parse(fs.readFileSync('brock.json', 'utf8'));
+    var json = JSON.parse(fs.readFileSync('/SARRamhacks/brock.json', 'utf8'));
     res.render('myPersonalInfo', { data: json, title: 'My Personal Infos'});
 });
 
